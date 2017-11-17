@@ -143,7 +143,6 @@ void usage()
 	fprintf(stderr, "  -N [neighborhood size]    The neighborhood size for computing the descriptor (default: N=32 pixels)\n");
 	fprintf(stderr, "  -s [spatial cells]        The number of cells in the nxy axis (default: nxy=2 cells)\n");
 	fprintf(stderr, "  -t [temporal cells]       The number of cells in the nt axis (default: nt=3 cells)\n");
-	fprintf(stderr, "  -A [scale number]         The number of maximal spatial scales (default: 8 scales)\n");
 	fprintf(stderr, "  -I [initial gap]          The gap for re-sampling feature points (default: 1 frame)\n");
 	fprintf(stderr, "  -H [human bounding box]   The human bounding box file to remove outlier matches (default: None)\n");
 }
@@ -178,9 +177,6 @@ bool arg_parse(int argc, char** argv)
 			break;
 		case 't':
 			nt_cell = atoi(argv[c+1]);
-			break;
-		case 'A':
-			scale_num = atoi(argv[c+1]);
 			break;
 		case 'I':
 			init_gap = atoi(argv[c+1]);
